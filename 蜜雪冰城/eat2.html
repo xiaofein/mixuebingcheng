@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://gimg3.baidu.com/topone/src=https%3A%2F%2Fbkimg.cdn.bcebos.com%2Fsmart%2F63d9f2d3572c11dfa9ec932b957f75d0f703918f6438-bkimg-process%2Cv_1%2Crw_1%2Crh_1%2Cmaxl_800%2Cpad_1%3Fx-bce-process%3Dimage%2Fresize%2Cm_pad%2Cw_348%2Ch_348%2Ccolor_ffffff&refer=http%3A%2F%2Fwww.baidu.com&app=2011&size=f200,200&n=0&g=0n&er=404&q=75&fmt=auto&maxorilen2heic=2000000?sec=1730653200&t=5ec42305d549991cd1f1f5058d3103d3" rel="icon" />
+    <title>蜜雪冰城</title>
+    <style>
+        /* 初始化页面，清除所有元素的内外边距 */
+        * {
+            padding: 0;
+            margin: 0;
+            /* 设置背景颜色为414141 */
+            background-color: #dbe4eb;
+        }
+
+        /* 顶部固定区域 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #00000000;
+            text-align: center;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        /* 盒子居中 */
+        .content {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: rgb(11, 0, 0);
+            white-space: nowrap; /* 不换行 */
+            overflow: hidden; /* 超出部分隐藏 */
+        }
+    
+        /* 使用上期视频的文字渐变效果，再加一点点文字阴影 */
+        span, h2 {
+            background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: ff 0.9s linear infinite;
+        }
+        video{            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            white-space: nowrap; /* 不换行 */
+            overflow: hidden; /* 超出部分隐藏 */
+            height: 40em;
+            width: auto;
+
+        }
+        @keyframes ff {
+            to { filter: hue-rotate(360deg); }
+        }
+
+        /* 设置一下字体大小 */
+        h2 {
+            font-size: 5vw; /* 相对于视窗宽度的百分比 */
+        }
+
+        span {
+            font-size: 4vw; /* 相对于视窗宽度的百分比 */
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 6vw; /* 在小屏幕上增大字体大小 */
+            }
+
+            span {
+                font-size: 5vw; /* 在小屏幕上增大字体大小 */
+            }
+        }
+
+        /* 按钮居中 */
+        button {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 25px;
+            box-shadow: 0 0 10px #050000;
+            /* 取消轮廓线 */
+            outline: none;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>蜜雪冰城喝什么？</h2>
+    </div>
+    <div class="video">
+        <video controls autoplay muted loop src="91696d3af77f996e3d831ef62a076648.mp4"></video>
+    </div>
+    <div class="content">
+        <span id="name"></span>
+    </div>
+    <button id="button_text">stop</button>
+
+    <script>
+        // 获取标签
+        let nametxt = document.getElementById('name');
+        let button = document.getElementById('button_text');
+        // 创建一个数组存储名字
+        let uname = ["东方乌龙轻乳茶-6元","芋圆葡萄-8元","东方乌龙奶盖茶-9元","东方乌龙茶-4元","芝士奶盖富桂茶-8元","富桂糯糯茶-7元","茉莉奶绿-6元","冰鲜柠檬水-4元","新鲜冰淇淋-2元","珍珠奶茶-6元","棒打鲜橙-6元","满杯百香果-7元","蜜桃四季春-7元","脆皮大圣代-7元","雪王大圣代-6元","草莓摇摇奶昔-6元","桑葚摇摇奶昔-6元","雪王小圣代-5元","草莓啵啵-9元","桑葚莓莓-9元","桃喜茫茫-6元","柠檬红茶-5元","柠檬绿茶-5元","香柠百香果-7元","香柠绿茶-5元","糯香香柠茶-6元","香柠红茶-5元","菠萝百香果-8元","菠萝甜心橙-7元","糯香桂花茶-5元","三拼霸霸奶茶-8元","布丁奶茶-7元","椰果奶茶-7元","双拼奶茶-7元","原味奶茶-6元","港式杨枝甘露-9元","蜜桃甘露-9元","草莓椰奶露-7元","芝士奶盖绿茶-8元","芝士奶盖红茶-8元","芝士奶盖蜜桃-10元","芝士奶盖桑葚-11元","芝士奶盖富桂茶-8元","东方乌龙奶盖茶-9元","蜜雪原叶红茶-4元","高山四级春茶-4元","东方乌龙茶","椰椰拿铁-8元","芝士奶盖咖啡-10元","雪王雪顶咖啡-7元","茉莉拿铁咖啡-7元","美式咖啡-5元","拿铁咖啡-7元"];
+        // 创建一个函数生成随机数字
+        function getrandom(min, max){
+            return Math.floor(Math.random() * (max - min - 1) + min);
+        }
+        function clock(){
+            // 通过获取一个随机的数组下标实现随机获取一个名字，并将这个名字赋值给变量random
+            let random = uname[getrandom(0, uname.length - 1)];
+            //将random塞到span里
+            nametxt.innerHTML = random;
+        };
+        // 打印名字已经实现了，下一步让没点击按钮前名字一直刷新
+        // 设置不停止时名字的刷新速度为30毫秒
+        let time = self.setInterval("clock()", 30);
+        // 将开始与停止按钮绑定到按钮上，并通过按钮控制
+        let flag = false;
+        button.onclick = function(){
+            // 当flag标志为false时，点击按钮让刷新停止；
+            if(flag == false) {
+                time = window.clearInterval(time);
+                // 按钮文字从stop变为start；
+                button.innerHTML = 'start';
+                // 标志变更
+                flag = true;
+            } else {
+                // 当flag标志为true时，开始刷新，文字变更
+                time = self.setInterval("clock()", 30);
+                button.innerHTML = 'stop';
+                flag = false;
+            }
+        }
+    </script>
+</body>
+</html>
